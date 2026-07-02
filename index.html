@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Artist creator 💫✨">
+<title>SOUANPT FOLIO — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--a:#c8ff00;--bg:#060606;--t:#f0ece4;--m:rgba(240,236,228,.5);--s:rgba(255,255,255,.04);--b:rgba(255,255,255,.08);--cols:3}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--t);font-family:'Syne',system-ui,sans-serif}a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:50;height:56px;display:flex;align-items:center;padding:0 32px;gap:24px;background:var(--bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--b)}
+.logo{font-size:16px;font-weight:800;letter-spacing:-.5px}.logo span{color:var(--a)}
+.nl{display:flex;gap:4px;margin-left:auto}.nl a{padding:6px 14px;border-radius:20px;font-size:12px;color:var(--m);transition:.2s}.nl a:hover{color:var(--t)}
+.hero{padding:80px 32px 56px;text-align:center;max-width:800px;margin:0 auto}
+.htag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--a);margin-bottom:16px}
+h1{font-size:clamp(40px,7vw,72px);font-weight:800;letter-spacing:-2px;line-height:1.08;margin-bottom:16px}h1 span{color:var(--a)}
+.hsub{font-size:15px;color:var(--m);margin-bottom:28px;line-height:1.7}
+.ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.bp{padding:12px 28px;background:var(--a);color:#060606;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:.2s;text-decoration:none;display:inline-block}.bp:hover{opacity:.85}
+.bg{padding:12px 28px;background:transparent;color:var(--t);border:1px solid var(--b);border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}.bg:hover{border-color:var(--a);color:var(--a)}
+section{padding:48px 32px;max-width:1100px;margin:0 auto}
+.sl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--a);margin-bottom:8px}
+h2{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:24px}
+.pg{display:grid;grid-template-columns:repeat(var(--cols),1fr);gap:16px}
+.pc{background:var(--s);border:1px solid var(--b);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s}
+.pc:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.pt{aspect-ratio:16/10;background:var(--s)}.pb{padding:14px}.pn{font-size:13px;font-weight:700;margin-bottom:6px}
+.ptags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px}.ptag{font-size:9px;padding:2px 7px;border-radius:4px;background:rgba(200,255,0,.1);color:var(--a);font-weight:600}
+.pm{font-size:10px;color:var(--m)}.ci{text-align:center;padding:60px 32px;max-width:600px;margin:0 auto}
+footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10px;color:var(--m)}
+@keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.pc{animation:fu .4s ease both}
+@media(max-width:600px){.pg{grid-template-columns:1fr!important}.nl{display:none}}
+</style></head><body>
+<nav><a href="#" class="logo">SOUANPT FOLIO<span>.</span></a><div class="nl"><a href="#projects">Projets</a><a href="#contact">Contact</a><a href="https://www.behance.net/souanpt" target="_blank" style="color:#4a8cff">Behance ↗</a></div></nav>
+<div class="hero"><div class="htag">Créatif · Designer · Motion</div><h1>SOUANPT FOLIO<span>.</span></h1><p class="hsub">Artist creator 💫✨</p>
+<div class="ctas"><a href="#projects" class="bp">Voir les projets</a></div></div>
+<section id="projects"><div class="sl">Portfolio</div><h2>Mes projets</h2><div class="pg"><div style="grid-column:span 3;text-align:center;color:rgba(240,236,228,.5);padding:40px">Aucun projet</div></div></section>
+<section id="contact" class="ci"><div class="sl">Contact</div><h2>Travaillons ensemble</h2><div class="ctas" style="margin-top:20px"> <a href="https://www.behance.net/souanpt" target="_blank" class="bg">Behance →</a></div></section>
+<footer>© 2026 SOUANPT FOLIO · <span style="color:var(--a)">●</span> souanpt.hub</footer>
+</body></html>
