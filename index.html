@@ -5,36 +5,121 @@
 <title>SOUANPT FOLIO — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--a:#c8ff00;--bg:#060606;--t:#f0ece4;--m:rgba(240,236,228,.5);--s:rgba(255,255,255,.04);--b:rgba(255,255,255,.08);--cols:3}
+:root{--a:#ffbb00;--bg:#060606;--t:#f0ece4;--m:rgba(240,236,228,.55);--s:rgba(255,255,255,.04);--b:rgba(255,255,255,.09);--cols:3}
 *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--t);font-family:'Syne',system-ui,sans-serif}a{color:inherit;text-decoration:none}
-nav{position:sticky;top:0;z-index:50;height:56px;display:flex;align-items:center;padding:0 32px;gap:24px;background:var(--bg);backdrop-filter:blur(20px);border-bottom:1px solid var(--b)}
-.logo{font-size:16px;font-weight:800;letter-spacing:-.5px}.logo span{color:var(--a)}
-.nl{display:flex;gap:4px;margin-left:auto}.nl a{padding:6px 14px;border-radius:20px;font-size:12px;color:var(--m);transition:.2s}.nl a:hover{color:var(--t)}
-.hero{padding:80px 32px 56px;text-align:center;max-width:800px;margin:0 auto}
+/* ── NAVBAR (pilule flottante) ── */
+.navwrap{position:sticky;top:14px;z-index:100;display:flex;justify-content:center;padding:0 16px}
+nav{display:flex;align-items:center;gap:4px;width:100%;max-width:900px;padding:8px 8px 8px 16px;border-radius:999px;background:rgba(10,10,10,.75);border:1px solid var(--b);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.logo{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:800;letter-spacing:-.4px;margin-right:6px;white-space:nowrap}
+.logo .ic{width:24px;height:24px;border-radius:8px;background:var(--a);display:inline-flex;align-items:center;justify-content:center;color:#060606;font-size:13px;font-weight:800}
+.logo span.d{color:var(--a)}
+.nl{display:flex;gap:2px;margin:0 auto}
+.nl a{padding:8px 14px;border-radius:999px;font-size:12px;color:var(--m);transition:.2s;white-space:nowrap}
+.nl a:hover{color:var(--t);background:rgba(128,128,128,.12)}
+.ncta{padding:9px 18px;border-radius:999px;background:var(--a);color:#060606;font-size:12px;font-weight:800;white-space:nowrap;transition:.2s}
+.ncta:hover{opacity:.85}
+/* ── HERO ── */
+.hero{padding:88px 32px 56px;text-align:center;max-width:820px;margin:0 auto}
 .htag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--a);margin-bottom:16px}
-h1{font-size:clamp(40px,7vw,72px);font-weight:800;letter-spacing:-2px;line-height:1.08;margin-bottom:16px}h1 span{color:var(--a)}
+h1{font-size:clamp(40px,7vw,76px);font-weight:800;letter-spacing:-2px;line-height:1.06;margin-bottom:16px}h1 span{color:var(--a)}
 .hsub{font-size:15px;color:var(--m);margin-bottom:28px;line-height:1.7}
 .ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.bp{padding:12px 28px;background:var(--a);color:#060606;border-radius:8px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:.2s;text-decoration:none;display:inline-block}.bp:hover{opacity:.85}
-.bg{padding:12px 28px;background:transparent;color:var(--t);border:1px solid var(--b);border-radius:8px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}.bg:hover{border-color:var(--a);color:var(--a)}
+.bp{padding:12px 28px;background:var(--a);color:#060606;border-radius:10px;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:.2s;text-decoration:none;display:inline-block}.bp:hover{opacity:.85}
+.bg{padding:12px 28px;background:transparent;color:var(--t);border:1px solid var(--b);border-radius:10px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;transition:.2s;text-decoration:none;display:inline-block}.bg:hover{border-color:var(--a);color:var(--a)}
 section{padding:48px 32px;max-width:1100px;margin:0 auto}
 .sl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--a);margin-bottom:8px}
 h2{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:24px}
+/* ── PROJETS ── */
 .pg{display:grid;grid-template-columns:repeat(var(--cols),1fr);gap:16px}
-.pc{background:var(--s);border:1px solid var(--b);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s}
-.pc:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
-.pt{aspect-ratio:16/10;background:var(--s)}.pb{padding:14px}.pn{font-size:13px;font-weight:700;margin-bottom:6px}
+.pc{background:var(--s);border:1px solid var(--b);border-radius:14px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative}
+.pc:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3);border-color:var(--a)}
+.pt{aspect-ratio:16/10;background:var(--s);position:relative;display:flex;align-items:flex-end;justify-content:flex-end}
+.go{opacity:0;transition:.2s;background:var(--a);color:#060606;font-size:10px;font-weight:800;padding:5px 12px;border-radius:999px;margin:10px}
+.pc:hover .go{opacity:1}
+.pb{padding:14px}.pn{font-size:13px;font-weight:700;margin-bottom:6px}
 .ptags{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px}.ptag{font-size:9px;padding:2px 7px;border-radius:4px;background:rgba(200,255,0,.1);color:var(--a);font-weight:600}
-.pm{font-size:10px;color:var(--m)}.ci{text-align:center;padding:60px 32px;max-width:600px;margin:0 auto}
+.pm{font-size:10px;color:var(--m)}
+/* ── AVIS ── */
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:24px}
+.rc{background:var(--s);border:1px solid var(--b);border-radius:14px;padding:18px}
+.rh{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.rav{width:34px;height:34px;border-radius:50%;background:rgba(200,255,0,.12);color:var(--a);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.rn{font-size:12px;font-weight:700}.rs{color:#e4b24a;font-size:12px}
+.rt{font-size:12px;color:var(--m);line-height:1.7}.rp{font-size:10px;color:var(--m);margin-top:8px;opacity:.7}
+/* ── FORM AVIS ── */
+.leave{text-align:center}
+#revform{display:none;max-width:440px;margin:18px auto 0;text-align:left;background:var(--s);border:1px solid var(--b);border-radius:14px;padding:20px}
+#revform.open{display:block}
+#revform label{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--m);display:block;margin:12px 0 5px}
+#revform input,#revform textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--b);border-radius:8px;padding:10px 12px;color:var(--t);font-family:inherit;font-size:13px;outline:none}
+#revform input:focus,#revform textarea:focus{border-color:var(--a)}
+#revform textarea{height:90px;resize:none}
+#rvstars{display:flex;gap:4px;font-size:26px;cursor:pointer;color:rgba(255,255,255,.2)}
+#rvstars span{transition:.15s}#rvstars span.on{color:#e4b24a}
+.rhint{font-size:10px;color:var(--m);margin-top:10px;line-height:1.6;text-align:center}
+.ci{text-align:center;padding:60px 32px;max-width:600px;margin:0 auto}
 footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10px;color:var(--m)}
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.pc{animation:fu .4s ease both}
-@media(max-width:600px){.pg{grid-template-columns:1fr!important}.nl{display:none}}
+.pc{animation:fu .4s ease both}.pc:nth-child(1){animation-delay:0s}
+@media(max-width:640px){.pg{grid-template-columns:1fr!important}.nl{display:none}}
 </style></head><body>
-<nav><a href="#" class="logo">SOUANPT FOLIO<span>.</span></a><div class="nl"><a href="#projects">Projets</a><a href="#contact">Contact</a><a href="https://www.behance.net/souanpt" target="_blank" style="color:#4a8cff">Behance ↗</a></div></nav>
+<div class="navwrap"><nav>
+  <a href="#" class="logo"><span class="ic">✳</span>SOUANPT FOLIO<span class="d">.</span></a>
+  <div class="nl">
+    <a href="#projects">Projets</a>
+    <a href="#avis">Avis</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.behance.net/souanpt" target="_blank" style="color:#4a8cff">Behance ↗</a>
+  </div>
+  <a class="ncta" href="#contact">Me contacter</a>
+</nav></div>
 <div class="hero"><div class="htag">Créatif · Designer · Motion</div><h1>SOUANPT FOLIO<span>.</span></h1><p class="hsub">Artist creator 💫✨</p>
 <div class="ctas"><a href="#projects" class="bp">Voir les projets</a></div></div>
-<section id="projects"><div class="sl">Portfolio</div><h2>Mes projets</h2><div class="pg"><div style="grid-column:span 3;text-align:center;color:rgba(240,236,228,.5);padding:40px">Aucun projet</div></div></section>
+<section id="projects"><div class="sl">Portfolio</div><h2>Mes projets</h2><div class="pg">
+    <article class="pc">
+      <div class="pt" style="background:linear-gradient(135deg,#1a0533,#6B21A8)"></div>
+      <div class="pb">
+        <div class="pn">Stages</div>
+        <div class="ptags"><span class="ptag">PRO</span></div>
+        <div class="pm"></div>
+      </div>
+    </article></div></section>
+<section id="avis"><div class="sl">Témoignages</div><h2>Avis clients</h2>
+  <div class="rg"><div style="grid-column:1/-1;text-align:center;color:rgba(240,236,228,.55);padding:24px;font-size:13px">Sois le premier à laisser un avis ✨</div></div>
+  <div class="leave">
+    <button class="bg" onclick="document.getElementById('revform').classList.toggle('open')">✎ Laisser un avis</button>
+    <form id="revform" onsubmit="return revSend(event)">
+      <label>Ton nom</label><input id="rv-n" required maxlength="60" placeholder="Prénom Nom">
+      <label>Ta note</label><div id="rvstars"><span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span><span class="on">★</span></div>
+      <label>Ton avis</label><textarea id="rv-t" required maxlength="600" placeholder="Raconte ton expérience…"></textarea>
+      <div style="margin-top:14px;display:flex;gap:8px">
+        <button type="submit" class="bp" style="flex:1">Envoyer l'avis</button>
+      </div>
+      <p class="rhint">L'avis s'envoie via GitHub (compte gratuit requis, 1 clic).<br>Chaque avis est vérifié avant publication ✓</p>
+    </form>
+  </div>
+</section>
 <section id="contact" class="ci"><div class="sl">Contact</div><h2>Travaillons ensemble</h2><div class="ctas" style="margin-top:20px"> <a href="https://www.behance.net/souanpt" target="_blank" class="bg">Behance →</a></div></section>
 <footer>© 2026 SOUANPT FOLIO · <span style="color:var(--a)">●</span> souanpt.hub</footer>
+<script>
+var _rvN=5;
+document.querySelectorAll('#rvstars span').forEach(function(s,i){
+  s.onclick=function(){_rvN=i+1;document.querySelectorAll('#rvstars span').forEach(function(x,j){x.classList.toggle('on',j<_rvN);});};
+});
+function revSend(e){
+  e.preventDefault();
+  var n=document.getElementById('rv-n').value.trim(), t=document.getElementById('rv-t').value.trim();
+  if(!n||!t)return false;
+  var stars='★'.repeat(_rvN)+'☆'.repeat(5-_rvN);
+  var title='[AVIS] '+stars+' — '+n;
+  var body='Nom: '+n+'\nNote: '+_rvN+'\nAvis: '+t+'\n\n— envoyé depuis le portfolio';
+  window.open('https://github.com/N7T0-OF/souanpt-stock/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body),'_blank');
+  return false;
+}
+function revMail(){
+  var n=document.getElementById('rv-n').value.trim()||'', t=document.getElementById('rv-t').value.trim()||'';
+  location.href='mailto:?subject='+encodeURIComponent('[AVIS] '+_rvN+'/5 — '+n)+'&body='+encodeURIComponent(t);
+  return false;
+}
+</script>
 </body></html>
