@@ -8,9 +8,24 @@
   "behance": "souanpt",
   "email": "",
   "repo": "N7T0-OF/souanpt-stock",
+  "sections": {
+    "projects": true,
+    "avis": true,
+    "contact": false,
+    "about": false
+  },
+  "sectionOrder": [
+    "about",
+    "projects",
+    "avis",
+    "contact"
+  ],
+  "avisMode": "defile",
+  "about": "",
+  "goatcounter": "n7t0",
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1783187665690,
+    "ts": 1783235197796,
     "repo": "N7T0-OF/souanpt-stock"
   }
 }
