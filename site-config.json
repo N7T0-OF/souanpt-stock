@@ -1,7 +1,7 @@
 {
   "siteName": "SOUANPT FOLIO",
   "bio": "Artist creator 💫✨",
-  "accentColor": "#e4b24a",
+  "accentColor": "#c48808",
   "theme": "#060606",
   "layout": "3",
   "heroText": "Photographe · Lumière · Histoires",
@@ -23,9 +23,12 @@
   "avisMode": "defile",
   "about": "",
   "goatcounter": "n7t0",
+  "layoutStyle": "sidebar",
+  "heroImage": "",
+  "projectsLimit": 0,
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1783270128611,
+    "ts": 1783271848192,
     "repo": "N7T0-OF/souanpt-stock"
   }
 }
