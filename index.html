@@ -67,8 +67,14 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
 @media(max-width:640px){.made{bottom:12px;right:12px;padding:6px 10px 6px 8px;font-size:10px}}
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .pc{animation:fu 0.5599999999999999s ease both}.pc:nth-child(1){animation-delay:0s}
-.pc{transform-style:preserve-3d;transition:transform .12s ease,box-shadow .25s}
-.pc:hover{box-shadow:0 14px 40px color-mix(in srgb,var(--a) 32%,transparent)!important}
+/* Effets premium (survol & souris) */
+.pc{transition:transform .18s ease,box-shadow .25s ease}
+.pc{transform-style:preserve-3d;transition:transform .1s ease,box-shadow .25s}
+
+
+.pc:hover{box-shadow:0 16px 42px color-mix(in srgb,var(--a) 32%,transparent)!important}
+.pc{position:relative}.pc::before{content:'';position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.22) 48%,transparent 60%);transform:translateX(-130%);transition:transform .7s ease}.pc:hover::before{transform:translateX(130%)}
+
 /* ── À PROPOS ── */
 .about-p{font-size:14px;color:var(--m);line-height:1.95}
 /* ── AVIS DÉFILEMENT INFINI ── */
@@ -205,11 +211,13 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in');});
 }
 
-// Inclinaison 3D des projets au survol
+// Effet 3D interactif (Gun.lol / Haunt.gg) — la carte s'incline vers la souris
+var _ti=16;
 document.querySelectorAll('.pc').forEach(function(c){
-  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(700px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg) translateY(-3px)';});
+  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(700px) rotateY('+(x*_ti)+'deg) rotateX('+(-y*_ti)+'deg) translateY(-4px)';});
   c.addEventListener('mouseleave',function(){c.style.transform='';});
 });
+
 
 </script>
 <script data-goatcounter="https://n7t0.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

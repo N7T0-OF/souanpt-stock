@@ -29,12 +29,17 @@
   "animLevel": "premium",
   "fx": {
     "tilt": true,
+    "intensity": 16,
+    "shine": true,
+    "lift": false,
+    "scale": false,
     "glow": true,
+    "mouseglow": false,
     "parallax": false
   },
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1783803364705,
-    "repo": "N7T0-OF/souanpt-stock"
+    "repo": "N7T0-OF/souanpt-stock",
+    "ts": 1783803393032
   }
 }
