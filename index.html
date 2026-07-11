@@ -66,7 +66,9 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
 .made b{color:var(--a)}
 @media(max-width:640px){.made{bottom:12px;right:12px;padding:6px 10px 6px 8px;font-size:10px}}
 @keyframes fu{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.pc{animation:fu .4s ease both}
+.pc{animation:fu 0.21s ease both}
+.pc{transform-style:preserve-3d;transition:transform .12s ease,box-shadow .25s}
+.pc:hover{box-shadow:0 14px 40px color-mix(in srgb,var(--a) 32%,transparent)!important}
 /* ── À PROPOS ── */
 .about-p{font-size:14px;color:var(--m);line-height:1.95}
 /* ── AVIS DÉFILEMENT INFINI ── */
@@ -77,7 +79,7 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
 .mq .rc{width:280px;flex-shrink:0}
 @keyframes mqs{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 /* ── APPARITION AU SCROLL ── */
-.rev{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rev{opacity:0;transform:translateY(18px);transition:opacity 0.3s ease,transform 0.3s ease}
 .rev.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.rev{opacity:1;transform:none;transition:none}.mqtrack{animation:none}}
 /* ── MENU MOBILE ── */
@@ -127,7 +129,7 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
     <a href="#" class="sb-logo"><span class="ic">✳</span>SOUANPT FOLIO</a>
     <nav class="sb-nav">
       <a href="#projects"><span class="sbi">▦</span>Projets</a><a href="#avis"><span class="sbi">★</span>Avis</a>
-      <a href="https://www.behance.net/souanpt" target="_blank"><span class="sbi">↗</span>Behance</a>
+      <a href="https://www.behance.net/SOUANPT" target="_blank"><span class="sbi">↗</span>Behance</a>
     </nav>
     
     
@@ -155,7 +157,7 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
     <footer>© 2026 SOUANPT FOLIO · <span style="color:var(--a)">●</span> souanpt.hub</footer>
   </main>
 </div>
-<a class="made" href="https://n7t0-of.github.io/souanpt-hub/" target="_blank" rel="noopener" title="Créé avec Souanpt HUB — clique pour découvrir"><span class="mic">✳</span>Made by <b>Souanpt&nbsp;HUB</b></a>
+<a class="made" href="https://souanptjub.pages.dev/" target="_blank" rel="noopener" title="Créé avec Souanpt HUB — clique pour découvrir"><span class="mic">✳</span>Made by <b>Souanpt&nbsp;HUB</b></a>
 <script>
 var _rvN=5;
 document.querySelectorAll('#rvstars span').forEach(function(s,i){
@@ -187,12 +189,23 @@ function filterTag(t){
   return false;
 }
 /* Apparition au scroll */
+
 if ('IntersectionObserver' in window) {
   var _io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');_io.unobserve(en.target);}});},{threshold:.12});
   document.querySelectorAll('.rev').forEach(function(el){_io.observe(el);});
 } else {
   document.querySelectorAll('.rev').forEach(function(el){el.classList.add('in');});
 }
+
+// Inclinaison 3D des projets au survol
+document.querySelectorAll('.pc').forEach(function(c){
+  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform='perspective(700px) rotateY('+(x*7)+'deg) rotateX('+(-y*7)+'deg) translateY(-3px)';});
+  c.addEventListener('mouseleave',function(){c.style.transform='';});
+});
+
+// Parallaxe du hero suivant la souris
+var _h=document.querySelector('.sb-hero, .hero');
+if(_h) window.addEventListener('mousemove',function(e){var x=(e.clientX/window.innerWidth-.5),y=(e.clientY/window.innerHeight-.5);_h.style.backgroundPosition='calc(50% + '+(x*18)+'px) calc(50% + '+(y*18)+'px)';});
 </script>
 <script data-goatcounter="https://n7t0.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body></html>

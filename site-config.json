@@ -5,7 +5,7 @@
   "theme": "#060606",
   "layout": "3",
   "heroText": "Photographe · Lumière · Histoires",
-  "behance": "souanpt",
+  "behance": "SOUANPT",
   "email": "",
   "repo": "N7T0-OF/souanpt-stock",
   "sections": {
@@ -26,9 +26,15 @@
   "layoutStyle": "sidebar",
   "heroImage": "",
   "projectsLimit": 0,
+  "animLevel": "light",
+  "fx": {
+    "tilt": true,
+    "glow": true,
+    "parallax": true
+  },
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1783271848192,
-    "repo": "N7T0-OF/souanpt-stock"
+    "repo": "N7T0-OF/souanpt-stock",
+    "ts": 1783271848192
   }
 }
