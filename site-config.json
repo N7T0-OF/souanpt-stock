@@ -61,7 +61,7 @@
   "acceptanceMode": "automatic",
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1792951613706,
+    "ts": 1792952428526,
     "repo": "N7T0-OF/souanpt-stock"
   },
   "ownerUid": "discord:722359595569250345",
@@ -450,10 +450,6 @@
       {
         "kind": "auto",
         "id": "clients"
-      },
-      {
-        "kind": "auto",
-        "id": "reviews"
       },
       {
         "kind": "value",
