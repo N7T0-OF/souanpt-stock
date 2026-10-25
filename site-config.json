@@ -5,7 +5,7 @@
   "theme": "#060606",
   "layout": "3",
   "heroText": "Créatif · Designer",
-  "behance": "",
+  "behance": "SOUANPT",
   "email": "",
   "repo": "N7T0-OF/souanpt-stock",
   "sections": {
@@ -49,7 +49,7 @@
   "contactVariant": "boutons",
   "socialsStyle": "cartes",
   "animLevel": "smooth",
-  "smoothWheel": false,
+  "smoothWheel": true,
   "fx": {
     "lift": false,
     "shine": true,
@@ -61,7 +61,7 @@
   "acceptanceMode": "automatic",
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1792949177550,
+    "ts": 1792949247779,
     "repo": "N7T0-OF/souanpt-stock"
   },
   "ownerUid": "discord:722359595569250345",

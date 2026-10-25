@@ -263,7 +263,7 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
     <a href="#" class="sb-logo"><span class="ic">✳</span>FOLIO</a>
     <nav class="sb-nav">
       <a href="#projects"><span class="sbi">▦</span>Portfolio</a><a href="#avis"><span class="sbi">★</span>Avis</a><a href="#stats"><span class="sbi">📊</span>Chiffres clés</a><a href="#contact"><span class="sbi">✉</span>Contact</a>
-      
+      <a href="https://www.behance.net/SOUANPT" target="_blank"><span class="sbi">↗</span>Behance</a>
     </nav>
     
     
@@ -426,9 +426,9 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
   </div>
 </section>
 <section id="stats" class="rev"><div class="sl">Chiffres clés</div><h2>Le hub en chiffres</h2>
-  <div class="kpis"><div class="kpi"><b class="kpi-v">9</b><span class="kpi-l">Projets</span></div><div class="kpi"><b class="kpi-v">2</b><span class="kpi-l">Clients</span></div><div class="kpi"><b class="kpi-v">4</b><span class="kpi-l">Avis reçus</span></div></div>
+  <div class="kpis"><div class="kpi"><b class="kpi-v">9</b><span class="kpi-l">Projets</span></div><div class="kpi"><b class="kpi-v">22</b><span class="kpi-l">Clients</span></div><div class="kpi"><b class="kpi-v">4</b><span class="kpi-l">Avis reçus</span></div></div>
 </section>
-<section id="contact" class="ci rev"><div class="sl">Contact</div><h2>Travaillons ensemble</h2></section>
+<section id="contact" class="ci rev"><div class="sl">Contact</div><h2>Travaillons ensemble</h2><div class="ctas" style="margin-top:16px"><a href="https://www.behance.net/SOUANPT" target="_blank" rel="noopener noreferrer" class="bg">Behance →</a></div></section>
 
 
     <footer>© 2026 FOLIO · <span style="color:var(--a)">●</span> souanpt.hub</footer>
@@ -436,7 +436,31 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
 </div>
 <a class="made" href="https://souanptjub.pages.dev/" target="_blank" rel="noopener" title="Créé avec Souanpt HUB — clique pour découvrir"><span class="mic">✳</span>Made by <b>Souanpt&nbsp;HUB</b></a>
 <script>
-
+(function(){
+  if (!window.matchMedia || !matchMedia('(hover:hover) and (pointer:fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var root=document.scrollingElement||document.documentElement, target=root.scrollTop, frame=0, prior='';
+  function step(){
+    var diff=target-root.scrollTop;
+    if(Math.abs(diff)<.8){root.scrollTop=target;frame=0;root.style.scrollBehavior=prior;return;}
+    root.scrollTop+=diff*.22;
+    frame=requestAnimationFrame(step);
+  }
+  document.addEventListener('wheel',function(e){
+    if(e.ctrlKey||e.metaKey||e.shiftKey||Math.abs(e.deltaX)>Math.abs(e.deltaY))return;
+    // Les petits deltas viennent généralement d'un pavé tactile : conserver son inertie native.
+    if(e.deltaMode===0&&Math.abs(e.deltaY)<40)return;
+    for(var node=e.target;node&&node!==document.body&&node!==root;node=node.parentElement){
+      if(node.scrollHeight>node.clientHeight+1&&/auto|scroll/.test(getComputedStyle(node).overflowY))return;
+    }
+    var amount=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?innerHeight:1);
+    var max=Math.max(0,root.scrollHeight-root.clientHeight);
+    var next=Math.max(0,Math.min(max,(frame?target:root.scrollTop)+amount));
+    if(next===root.scrollTop&&!frame)return;
+    e.preventDefault();target=next;
+    if(!frame){prior=root.style.scrollBehavior;root.style.scrollBehavior='auto';frame=requestAnimationFrame(step);}
+  },{passive:false});
+  document.addEventListener('click',function(e){if(e.target.closest&&e.target.closest('a[href^="#"]')&&frame){cancelAnimationFrame(frame);frame=0;root.style.scrollBehavior=prior;}});
+})();
 var _rvN=5;
 document.querySelectorAll('#rvstars span').forEach(function(s,i){
   s.onclick=function(){_rvN=i+1;document.querySelectorAll('#rvstars span').forEach(function(x,j){x.classList.toggle('on',j<_rvN);});};
