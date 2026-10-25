@@ -61,7 +61,7 @@
   "acceptanceMode": "automatic",
   "lastDeploy": {
     "url": "https://n7t0-of.github.io/souanpt-stock/",
-    "ts": 1792950920551,
+    "ts": 1792951613706,
     "repo": "N7T0-OF/souanpt-stock"
   },
   "ownerUid": "discord:722359595569250345",
@@ -409,6 +409,35 @@
       "link": {},
       "createdAt": 1792941491991,
       "updatedAt": 1792941491991
+    },
+    {
+      "id": "b_proj_1792951554625",
+      "type": "project",
+      "content": {
+        "ref": "1792951554625",
+        "mediaPosition": {
+          "x": 50,
+          "y": 50
+        }
+      },
+      "layout": {
+        "w": 1,
+        "h": 1,
+        "locked": false,
+        "x": 2,
+        "y": 6
+      },
+      "style": {},
+      "effects": {},
+      "visibility": {
+        "public": true,
+        "desktop": true,
+        "tablet": true,
+        "mobile": true
+      },
+      "link": {},
+      "createdAt": 1792952129345,
+      "updatedAt": 1792952129345
     }
   ],
   "stats": {
@@ -425,6 +454,14 @@
       {
         "kind": "auto",
         "id": "reviews"
+      },
+      {
+        "kind": "value",
+        "id": "files",
+        "label": "Téléchargements - créations",
+        "value": "45K",
+        "prefix": "",
+        "suffix": ""
       }
     ]
   },
