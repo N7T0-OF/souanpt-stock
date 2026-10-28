@@ -448,7 +448,7 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
   </div>
 </section>
 <section id="stats" class="rev"><div class="sl">Chiffres clés</div><h2>Le hub en chiffres</h2>
-  <div class="kpis"><div class="kpi"><b class="kpi-v">10</b><span class="kpi-l">Projets</span></div><div class="kpi"><b class="kpi-v">22</b><span class="kpi-l">Clients</span></div><div class="kpi"><b class="kpi-v">45K</b><span class="kpi-l">Téléchargements - créations</span></div></div>
+  <div class="kpis"><div class="kpi" data-project-count="1"><b class="kpi-v">10</b><span class="kpi-l">Projets</span></div><div class="kpi"><b class="kpi-v">22</b><span class="kpi-l">Clients</span></div><div class="kpi"><b class="kpi-v">45K</b><span class="kpi-l">Téléchargements - créations</span></div></div>
 </section>
 <section id="contact" class="ci rev"><div class="sl">Contact</div><h2>Travaillons ensemble</h2><div class="ctas" style="margin-top:16px"><a href="https://www.behance.net/SOUANPT" target="_blank" rel="noopener noreferrer" class="bg">Behance →</a></div></section>
 
@@ -516,6 +516,14 @@ function filterTag(t){
   });
   return false;
 }
+/* Compteur public : projects.json est mis à jour avec le portfolio. */
+(function(){var els=[].slice.call(document.querySelectorAll('.kpi[data-project-count]'));if(!els.length)return;
+fetch('projects.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(d){
+  if(d.version!==1||!Array.isArray(d.projects))return;
+  var ids={};for(var i=0;i<d.projects.length;i++){var p=d.projects[i];if(!p||typeof p.id!=='string'||!/^[A-Za-z0-9_-]{1,64}$/.test(p.id)||ids[p.id])return;ids[p.id]=1;}
+  els.forEach(function(el){var t=el.querySelector('.kpi-v');if(t)t.textContent=String(d.projects.length);});
+}).catch(function(){});
+})();
 /* ── Chiffres clés alimentés par une API publique (v3.9) ──
    La valeur gravée dans la page sert de REPLI : la section reste lisible sans
    réseau, sans script tiers obligatoire. Essai en direct, puis deux relais CORS
