@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://n7t0-of.github.io/souanpt-stock/sitemap.xml
