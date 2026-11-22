@@ -343,8 +343,7 @@ footer{text-align:center;padding:24px;border-top:1px solid var(--b);font-size:10
 @media (prefers-reduced-motion:reduce){#bv .bv-stage,#bv .bv-screen,#bv .bv-back{transition:none!important}#bv .bv-spin{animation:none}}
 
 /* ── Ambiance (js/site-ambiance.js) ── */
-#amb-grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:151;opacity:.07;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:amb-grain 1s steps(4) infinite}
-@keyframes amb-grain{0%{transform:translate(0,0)}25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+#amb-fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:150}
 #amb-prog{position:fixed;right:6px;top:50%;transform:translateY(-50%);width:4px;height:min(220px,40vh);border-radius:4px;background:rgba(128,128,128,.22);z-index:190;pointer-events:none}
 #amb-prog i{display:block;width:100%;height:0;border-radius:4px;background:var(--a);box-shadow:0 0 10px var(--a)}
 @media(prefers-reduced-motion:reduce){#amb-grain,#amb-enter b,.amb-tw::after{animation:none}}
@@ -775,7 +774,7 @@ if (window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches)
     };
     window.bvState = function () { return { open: !root.hidden, project: cur && cur.be, frames: root.querySelectorAll('iframe').length }; };
   })();</script>
-<div id="amb-grain" aria-hidden="true"></div><div id="amb-prog" aria-hidden="true"><i></i></div><script type="application/json" id="amb-data">{"enter":{"on":false,"text":"cliquer pour entrer","sub":""},"particles":"none","density":2,"pColor":"accent","cursor":"none","typewriter":{"on":false,"lines":[],"speed":2},"progress":true,"grain":true,"corner":{"on":false,"text":""}}</script><script>(function runtime() {
+<canvas id="amb-fx" aria-hidden="true"></canvas><div id="amb-prog" aria-hidden="true"><i></i></div><script type="application/json" id="amb-data">{"enter":{"on":false,"text":"cliquer pour entrer","sub":""},"particles":"dust","density":2,"pColor":"accent","cursor":"none","typewriter":{"on":false,"lines":[],"speed":2},"progress":true,"grain":false,"corner":{"on":false,"text":""}}</script><script>(function runtime() {
     var el = document.getElementById('amb-data'); if (!el) return;
     var S; try { S = JSON.parse(el.textContent); } catch (e) { return; }
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
